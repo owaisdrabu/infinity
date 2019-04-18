@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock %}
+{% block content %}
+<div class="back">
+    <div class="row">
+        {% for d in data %}
+         <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{d.image_url}}" height="200px" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{d.name}}</h5>
+                    <p class="card-text">{{d.location}}</p>
+                    <a href="#" class="btn btn-primary">Go There</a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+<br>
+{% endblock %}
